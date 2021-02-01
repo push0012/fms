@@ -13,7 +13,7 @@ class CreatePotMakingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pot_makings', function (Blueprint $table) {
+        Schema::create('preparing', function (Blueprint $table) {
             $table->increments('mak_id');
             $table->date('date');
             $table->integer('quantity');
@@ -28,6 +28,6 @@ class CreatePotMakingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pot_makings');
+        Schema::dropIfExists('preparing');
     }
 }

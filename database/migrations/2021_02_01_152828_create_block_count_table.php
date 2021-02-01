@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePotMountingTable extends Migration
+class CreateBlockCountTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreatePotMountingTable extends Migration
      */
     public function up()
     {
-        Schema::create('mounting', function (Blueprint $table) {
-            $table->increments('mou_id');
-            $table->date('date');
+        Schema::create('block_count', function (Blueprint $table) {
+            $table->increments('block_id');
             $table->string('block');
             $table->integer('quantity');
-            $table->string('action');
-            $table->integer('rows');
             $table->string('type');
-            
         });
     }
 
@@ -32,6 +28,6 @@ class CreatePotMountingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mounting');
+        Schema::dropIfExists('block_count');
     }
 }
